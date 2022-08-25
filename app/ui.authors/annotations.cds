@@ -69,3 +69,5 @@ annotate service.Authors with @(
         },
     ]
 );
+
+annotate service.Authors with @odata.draft.enabled;
