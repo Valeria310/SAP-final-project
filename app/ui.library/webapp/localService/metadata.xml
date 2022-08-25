@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:DataServices>
+        <Schema Namespace="LibraryService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Booking" EntityType="LibraryService.Booking"/>
+            </EntityContainer>
+            <EntityType Name="Booking">
+                <Key>
+                    <PropertyRef Name="bookingUUID"/>
+                </Key>
+                <Property Name="bookingUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="bookingID" Type="Edm.Int32"/>
+                <Property Name="beginDate" Type="Edm.Date"/>
+                <Property Name="endDate" Type="Edm.Date"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
