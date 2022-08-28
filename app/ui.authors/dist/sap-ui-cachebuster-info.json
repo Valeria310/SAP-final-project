@@ -1,10 +1,10 @@
 {
-  "Component-dbg.js": 1661367994945,
-  "manifest.json": 1661501721382,
+  "manifest-bundle.zip": 1661702902205,
   "Component.js": 1661367994945,
-  "manifest-bundle.zip": 1661501721401,
-  "Component-preload.js": 1661501721756,
+  "manifest.json": 1661702902189,
   "i18n/i18n.properties": 1661368028865,
+  "Component-preload.js": 1661702902515,
+  "Component-dbg.js": 1661367994945,
   "annotations/annotation.xml": 1661367994957,
   "index.html": 1661367994945
 }
