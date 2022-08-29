@@ -35,33 +35,23 @@ annotate service.Readers with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'readerID',
-                Value : readerID,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'firstName',
+                Label : 'first name',
                 Value : firstName,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'lastName',
+                Label : 'last name',
                 Value : lastName,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'readerBirthday',
+                Label : 'birthday',
                 Value : readerBirthday,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'phonenumber',
+                Label : 'phone number',
                 Value : phonenumber,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'image',
-                Value : image,
             },
         ],
     },
@@ -74,3 +64,5 @@ annotate service.Readers with @(
         },
     ]
 );
+
+annotate service.Readers with @odata.draft.enabled;

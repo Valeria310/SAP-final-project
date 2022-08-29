@@ -50,11 +50,6 @@ annotate service.Books with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'bookID',
-                Value : bookID,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : 'bookName',
                 Value : bookName,
             },
@@ -103,3 +98,5 @@ annotate service.Books with @(
         },
     ]
 );
+
+annotate service.Books with @odata.draft.enabled;

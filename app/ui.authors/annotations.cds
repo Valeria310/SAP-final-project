@@ -33,11 +33,6 @@ annotate service.Authors with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
         Data : [
-            {
-            $Type : 'UI.DataField',
-            Label : 'author ID',
-            Value : authorID,
-        },
         {
             $Type : 'UI.DataField',
             Label : 'first name',
