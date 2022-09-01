@@ -2,6 +2,8 @@ const cds = require('@sap/cds');
 
 let authorIDmax=-1;
 let readerIDmax=-1;
+let bookIDmax=-1;
+let bookingIDmax=-1;
 
 module.exports = cds.service.impl(async function () {
 
@@ -23,6 +25,24 @@ module.exports = cds.service.impl(async function () {
         };
         req.data.readerID = readerIDmax+1;
         readerIDmax++;
+    })
+
+    this.before('SAVE', 'Books', async (req)=>{
+        const books = await SELECT.from(Books);
+        if(books.length) {
+            bookIDmax = Math.max(...books.map(el=>el.bookID))
+        };
+        req.data.bookID = bookIDmax+1;
+        bookIDmax++;
+    })
+
+    this.before('SAVE', 'Booking', async (req)=>{
+        const bookings = await SELECT.from(Booking);
+        if(bookings.length) {
+            bookingIDmax = Math.max(...bookings.map(el=>el.bookingID))
+        };
+        req.data.bookingID = bookingIDmax+1;
+        bookingIDmax++;
     })
 
    })

@@ -10,17 +10,17 @@ annotate service.Booking with @(
         {
             $Type : 'UI.DataField',
             Label : 'reader ID',
-            Value : readerID.ID,
+            Value : readerID_readerID,
         },
         {
             $Type : 'UI.DataField',
             Label : 'book ID',
-            Value : bookID.bookID,
+            Value : bookID_bookID,
         },
         {
             $Type : 'UI.DataField',
             Label : 'status',
-            Value : bookingStatus.name,
+            Value : bookingStatus_ID,
         },
         {
             $Type : 'UI.DataField',
@@ -46,17 +46,17 @@ annotate service.Booking with @(
         {
             $Type : 'UI.DataField',
             Label : 'reader ID',
-            Value : readerID.ID,
+            Value : readerID_readerID,
         },
         {
             $Type : 'UI.DataField',
             Label : 'book ID',
-            Value : bookID.bookID,
+            Value : bookID_bookID,
         },
         {
             $Type : 'UI.DataField',
             Label : 'status',
-            Value : bookingStatus.name,
+            Value : bookingStatus_ID,
         },
         {
             $Type : 'UI.DataField',
@@ -79,3 +79,5 @@ annotate service.Booking with @(
         },
     ]
 );
+
+annotate service.Booking with @odata.draft.enabled;

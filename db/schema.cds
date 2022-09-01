@@ -3,7 +3,7 @@ namespace kb.library;
 using { cuid, managed, Currency } from '@sap/cds/common';
 
 entity Authors: cuid, managed {
-    authorID: Integer;
+    key authorID: Integer;
     firstName: String;
     lastName: String;
     birthday: Date;
@@ -13,21 +13,21 @@ entity Authors: cuid, managed {
 }
 
 entity Booking: cuid, managed {
-    bookingID: Integer;
+    key bookingID: Integer;
     readerID: Association to Readers; 
     bookID: Association to Books;
     bookingStatus:Association to Statuses;
     beginDate: Date;
-    beginTime: Integer;
+    beginTime: Time;
     endDate: Date;
-    endTime: Integer;
+    endTime: Time;
     image: String;
     returnTheBookEnabled: Boolean;
 }
 
 entity Books: cuid, managed {
+    key bookID: Integer;
     toAuthor: Association to Authors;
-    bookID: Integer;
     bookName: String;
     pageNumber: Integer;
     copyQty: Integer;
@@ -40,7 +40,7 @@ entity Books: cuid, managed {
 }
 
 entity Readers: cuid, managed {
-    readerID: Integer;
+    key readerID: Integer;
     firstName: String;
     lastName: String;
     readerBirthday: Date;
@@ -49,13 +49,13 @@ entity Readers: cuid, managed {
 }
 
 entity Statuses {
-    ID: Integer;
+    key ID: Integer;
     name: String;
     criticality: Integer;
 }
 
 entity BookStatuses {
-    ID: Integer;
+    key ID: Integer;
     name: String;
     criticality: Integer;
 }

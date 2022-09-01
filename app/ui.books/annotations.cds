@@ -4,6 +4,11 @@ annotate service.Books with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
+            Label : 'author ID',
+            Value : toAuthor_ID,
+        },
+        {
+            $Type : 'UI.DataField',
             Label : 'book ID',
             Value : bookID,
         },
@@ -35,12 +40,12 @@ annotate service.Books with @(
         {
             $Type : 'UI.DataField',
             Label : 'currency',
-            Value : CurrencyCode.symbol,
+            Value : CurrencyCode_code,
         },
         {
             $Type : 'UI.DataField',
             Label : 'status',
-            Value : status.name,
+            Value : status_ID,
         },
     ]
 );
@@ -50,22 +55,27 @@ annotate service.Books with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'bookName',
+                Label : 'author ID',
+                Value : toAuthor_ID,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'book name',
                 Value : bookName,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'pageNumber',
+                Label : 'page number',
                 Value : pageNumber,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'copyQty',
+                Label : 'copy quantity',
                 Value : copyQty,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'shippedQty',
+                Label : 'shipped quantity',
                 Value : shippedQty,
             },
             {
@@ -75,18 +85,14 @@ annotate service.Books with @(
             },
             {
                 $Type : 'UI.DataField',
+                Label : 'Currency code',
                 Value : CurrencyCode_code,
             },
             {
-                $Type : 'UI.DataField',
-                Label : 'image',
-                Value : image,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'orderBookEnabled',
-                Value : orderBookEnabled,
-            },
+            $Type : 'UI.DataField',
+            Label : 'status',
+            Value : status_ID,
+        },
         ],
     },
     UI.Facets : [

@@ -8,5 +8,7 @@ service LibraryService {
         action orderBook(Quantity: Integer @title : 'Order Quantity')
     };
     entity Readers as projection on my.Readers;
+    entity Statuses as projection on my.Statuses;
+    entity BookStatuses as projection on my.BookStatuses;
 
 }
