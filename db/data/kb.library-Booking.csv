@@ -1,2 +1,2 @@
-ID,bookingID,readerID_readerID,bookID_bookID,bookingStatus_ID,BEGINDATE,BEGINTIME
+ID,bookingID,readerID_ID,bookID_ID,bookingStatus_ID,BEGINDATE,BEGINTIME
 32ca5208-698d-4d7a-1524-003ef21b6380,1,1,1,2,18.08.2022,10:53

@@ -4,8 +4,8 @@ annotate service.Books with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'author ID',
-            Value : toAuthor_ID,
+            Label : 'author',
+            Value : toAuthor.lastName
         },
         {
             $Type : 'UI.DataField',
@@ -45,17 +45,25 @@ annotate service.Books with @(
         {
             $Type : 'UI.DataField',
             Label : 'status',
-            Value : status_ID,
+            Value : status.name,
         },
+    ],
+    UI.Identification: [
+        {
+            $Type: 'UI.DataFieldForAction',
+            Action: 'LibraryService.orderBook',
+            Label: 'Order Book'
+        }
     ]
 );
+
 annotate service.Books with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'author ID',
+                Label : 'author',
                 Value : toAuthor_ID,
             },
             {
@@ -106,3 +114,43 @@ annotate service.Books with @(
 );
 
 annotate service.Books with @odata.draft.enabled;
+annotate service.Books with {
+    toAuthor @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Authors',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : toAuthor_ID,
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'lastName',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true
+)};
+annotate service.Books with {
+    status @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'BookStatuses',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : status_ID,
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'name',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true
+)};

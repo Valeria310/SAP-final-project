@@ -9,18 +9,18 @@ annotate service.Booking with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : 'reader ID',
-            Value : readerID_readerID,
+            Label : 'reader',
+            Value : readerID.lastName,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'book ID',
-            Value : bookID_bookID,
+            Label : 'book',
+            Value : bookID.bookName,
         },
         {
             $Type : 'UI.DataField',
             Label : 'status',
-            Value : bookingStatus_ID,
+            Value : bookingStatus.name,
         },
         {
             $Type : 'UI.DataField',
@@ -38,35 +38,15 @@ annotate service.Booking with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
         Data : [
-            {
+        {
             $Type : 'UI.DataField',
-            Label : 'booking ID',
-            Value : bookingID,
+            Label : 'reader',
+            Value : readerID_ID,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'reader ID',
-            Value : readerID_readerID,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'book ID',
-            Value : bookID_bookID,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'status',
-            Value : bookingStatus_ID,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'begin date',
-            Value : beginDate,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'end date',
-            Value : endDate,
+            Label : 'book',
+            Value : bookID_ID,
         },
         ],
     },
@@ -80,4 +60,54 @@ annotate service.Booking with @(
     ]
 );
 
+annotate LibraryService.Authors with {
+    ID @(
+        UI.Hidden,
+        Common : {
+            Label : 'Last Name',
+            Text  : lastName
+        }
+    );
+}
+
 annotate service.Booking with @odata.draft.enabled;
+annotate service.Booking with {
+    readerID @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Readers',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : readerID_ID,
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'lastName',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true
+)};
+annotate service.Booking with {
+    bookID @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Books',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : bookID_ID,
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'bookName',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true
+)};

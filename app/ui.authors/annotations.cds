@@ -35,11 +35,6 @@ annotate service.Authors with @(
         Data : [
         {
             $Type : 'UI.DataField',
-            Label : 'author ID',
-            Value : authorID,
-        },
-        {
-            $Type : 'UI.DataField',
             Label : 'first name',
             Value : firstName,
         },

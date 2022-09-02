@@ -45,4 +45,8 @@ module.exports = cds.service.impl(async function () {
         bookingIDmax++;
     })
 
-   })
+    this.on('orderBook', 'Books', async(req) => {
+        console.log('REQ;', req.params)
+    })
+
+})

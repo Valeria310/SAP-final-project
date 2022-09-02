@@ -2,8 +2,9 @@ namespace kb.library;
 
 using { cuid, managed, Currency } from '@sap/cds/common';
 
-entity Authors: cuid, managed {
-    key authorID: Integer;
+entity Authors: managed {
+    key ID: UUID;
+    authorID: Integer;
     firstName: String;
     lastName: String;
     birthday: Date;
@@ -12,8 +13,9 @@ entity Authors: cuid, managed {
     books: Association to many Books on books.toAuthor = $self;
 }
 
-entity Booking: cuid, managed {
-    key bookingID: Integer;
+entity Booking: managed {
+    key ID: UUID;
+    bookingID: Integer;
     readerID: Association to Readers; 
     bookID: Association to Books;
     bookingStatus:Association to Statuses;
@@ -25,8 +27,9 @@ entity Booking: cuid, managed {
     returnTheBookEnabled: Boolean;
 }
 
-entity Books: cuid, managed {
-    key bookID: Integer;
+entity Books: managed {
+    key ID: UUID;
+    bookID: Integer;
     toAuthor: Association to Authors;
     bookName: String;
     pageNumber: Integer;
@@ -39,8 +42,9 @@ entity Books: cuid, managed {
     orderBookEnabled: Boolean;
 }
 
-entity Readers: cuid, managed {
-    key readerID: Integer;
+entity Readers: managed {
+    key ID: UUID;
+    readerID: Integer;
     firstName: String;
     lastName: String;
     readerBirthday: Date;
