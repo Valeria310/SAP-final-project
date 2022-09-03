@@ -29,9 +29,31 @@ annotate service.Booking with @(
         },
         {
             $Type : 'UI.DataField',
+            Label : 'begin time',
+            Value : beginTime,
+        },
+        {
+            $Type : 'UI.DataField',
             Label : 'end date',
             Value : endDate,
         },
+        {
+            $Type : 'UI.DataField',
+            Label : 'end time',
+            Value : endTime,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'quantity',
+            Value : quantity,
+        },
+    ],
+    UI.Identification: [
+        {
+            $Type: 'UI.DataFieldForAction',
+            Action: 'LibraryService.returnTheBook',
+            Label: 'Return the book',
+        }
     ]
 );
 annotate service.Booking with @(
@@ -47,6 +69,11 @@ annotate service.Booking with @(
             $Type : 'UI.DataField',
             Label : 'book',
             Value : bookID_ID,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'books quantity',
+            Value:  quantity,
         },
         ],
     },

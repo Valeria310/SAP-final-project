@@ -24,6 +24,7 @@ entity Booking: managed {
     endDate: Date;
     endTime: Time;
     image: String;
+    quantity: Integer;
     returnTheBookEnabled: Boolean;
 }
 
