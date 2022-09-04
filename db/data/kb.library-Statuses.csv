@@ -1,5 +1,5 @@
 ID,NAME,CRITICALITY
-0,Open,3
-1,Taken,3
-2,Closed,0
-3,Sent,1
+0,Open,0
+1,Taken,1
+2,Closed,3
+3,Sent,0

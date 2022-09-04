@@ -9,7 +9,7 @@ entity Authors: managed {
     lastName: String;
     birthday: Date;
     country: String;
-    image: String;
+    image: LargeBinary @Core.MediaType : 'image/png';
     books: Association to many Books on books.toAuthor = $self;
 }
 
@@ -18,14 +18,13 @@ entity Booking: managed {
     bookingID: Integer;
     readerID: Association to Readers; 
     bookID: Association to Books;
-    bookingStatus:Association to Statuses;
+    bookingStatus: Association to one Statuses ;
     beginDate: Date;
     beginTime: Time;
     endDate: Date;
     endTime: Time;
-    image: String;
-    quantity: Integer;
-    returnTheBookEnabled: Boolean;
+    image: LargeBinary @Core.MediaType : 'image/png';
+    virtual returnTheBookEnabled: Boolean;
 }
 
 entity Books: managed {
@@ -39,8 +38,8 @@ entity Books: managed {
     price: Double;
     CurrencyCode: Currency;
     status: Association to BookStatuses;
-    image: String;
-    orderBookEnabled: Boolean;
+    image: LargeBinary @Core.MediaType : 'image/png';
+    virtual orderBookEnabled: Boolean;
 }
 
 entity Readers: managed {
@@ -50,7 +49,7 @@ entity Readers: managed {
     lastName: String;
     readerBirthday: Date;
     phonenumber: String;
-    image: String;
+    image: LargeBinary @Core.MediaType : 'image/png';
 }
 
 entity Statuses {
