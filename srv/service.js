@@ -29,7 +29,7 @@ module.exports = cds.service.impl(async function () {
         req.data.status_ID = 0;
     })
 
-    this.before('CREATE', 'Books', async (req)=>{
+    this.before('SAVE', 'Books', async (req)=>{
         const book = req.data;
         if(book.pageNumber<=0) {
             return req.error(400, constants.wrongPagesInput);
